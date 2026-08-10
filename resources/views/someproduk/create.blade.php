@@ -60,7 +60,7 @@
         </a>
 
     </form>
-
+@include('layouts.footer_table')
 </div>
 
 @endsection

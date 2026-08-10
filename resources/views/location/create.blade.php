@@ -43,17 +43,17 @@
 <body>
 
 <div class="main-wrapper">
-    <div class="container" style="max-width: 800px;"> <!-- Membatasi lebar form agar proporsional -->
+    <div class="container" style="max-width: 800px;">  
         <div class="card">
 
-            <!-- Header Section -->
+        
             <div class="header-section" style="margin-bottom: 30px; border-bottom: 1px solid #e2e8f0; padding-bottom: 15px;">
                 <h1 style="font-size: 24px;">
                     <i class="fa-solid fa-square-plus" style="color: #566270; margin-right: 8px;"></i>Tambah Lokasi
                 </h1>
             </div>
 
-            <!-- Pesan Error Validasi -->
+           
             @if ($errors->any())
                 <div class="alert-danger" style="background:#fef2f2; color:#991b1b; border: 1px solid #fca5a5; padding:14px 18px; border-radius:12px; margin-bottom:20px; font-size: 14px;">
                     <ul style="margin-left: 20px;">
@@ -97,15 +97,13 @@
 
                   
 
-                <!-- Bagian Tombol Aksi Bawah -->
-                 <!-- Bagian Tombol Aksi / Menggunakan wrapper .aksi bawaan slider.css -->
                 <div class="aksi" style="justify-content: flex-start; margin-top: 25px; gap: 10px; border-top: 1px solid #e2e8f0; padding-top: 20px;">
-                    <!-- Tombol Simpan -->
+                  
                     <button type="submit" class="btn btn-add" style="background-color: #10b981;">
                         <i class="fa-solid fa-floppy-disk"></i> Simpan
                     </button>
 
-                    <!-- Tombol Kembali -->
+               
                     <a href="{{ route('location.index') }}" class="btn btn-edit" style="background-color: #64748b; color: white;">
                         <i class="fa-solid fa-arrow-left"></i> Kembali
                     </a>
@@ -116,17 +114,7 @@
         </div>
     </div>
 
-    <!-- Footer Konsisten -->
-    <footer class="main-footer">
-        <div class="footer-links">
-            <a href="#">Dokumentasi</a>
-            <a href="#">Bantuan</a>
-            <a href="#">Cantast hara</a>
-        </div>
-        <div class="footer-copyright">
-            &copy; 2026 Admin. Intex
-        </div>
-    </footer>
+  @include('layouts.footer_table')
 </div>
 
 </body>

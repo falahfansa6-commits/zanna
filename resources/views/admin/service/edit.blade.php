@@ -129,6 +129,8 @@ $(document).ready(function() {
     </div>
 </div>
 
+@include('layouts.footer_table')
+
 <!-- Script Counter Karakter Real-time -->
 <script>
     const judul = document.getElementById('judul');

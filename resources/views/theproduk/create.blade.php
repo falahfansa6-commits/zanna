@@ -113,7 +113,7 @@
                     @enderror
                 </div>
 
-                <!-- Kelompok Tombol Aksi menggunakan wrapper .aksi bawaan CSS -->
+             
                 <div class="aksi" style="justify-content: flex-start; margin-top: 25px; gap: 10px; border-top: 1px solid #e2e8f0; padding-top: 20px;">
                     <button type="submit" class="btn btn-add" style="background: #10b981;">
                         <i class="fa-solid fa-floppy-disk"></i> Simpan
@@ -127,6 +127,7 @@
 
         </div>
     </div>
+    @include('layouts.footer_table')
 </div>
 
 @endsection

@@ -9,17 +9,17 @@
 <link rel="stylesheet" href="{{ asset('css/slider.css') }}">
 
 <div class="main-wrapper">
-    <!-- Batas max-width kecil agar ukuran form teratur dan proporsional -->
+   
     <div class="container" style="max-width: 600px;">
         
         <div class="card">
             
-            <!-- Bagian Header Form -->
+           
             <div class="header-section" style="border-bottom: 1px solid #e2e8f0; padding-bottom: 10px; margin-bottom: 20px;">
                 <h1>Edit Pesan Hubungi Kami</h1>
             </div>
 
-            <!-- Blok Pesan Error Validasi Global -->
+           
             @if ($errors->any())
                 <div class="alert-danger" style="margin-bottom: 20px;">
                     <p style="margin: 0; font-weight: bold;">
@@ -33,12 +33,12 @@
                 </div>
             @endif
 
-            <!-- Form Edit Data -->
+        
             <form action="{{ route('hub_kami.update', $hub_kami->id) }}" method="POST">
                 @csrf
                 @method('PUT')
 
-                <!-- Input Nama -->
+              
                 <div class="form-group">
                     <label for="nama">Nama <span style="color: #ef4444;">*</span></label>
                     <input 
@@ -56,7 +56,7 @@
                     @enderror
                 </div>
 
-                <!-- Input No WhatsApp -->
+            
                 <div class="form-group" style="margin-top: 15px;">
                     <label for="no_wa">No WhatsApp <span style="color: #ef4444;">*</span></label>
                     <input 
@@ -76,7 +76,7 @@
 
 
 
-                 <!-- Input No WhatsApp -->
+                
                 <div class="form-group" style="margin-top: 15px;">
                     <label for="email">Email <span style="color: #ef4444;">*</span></label>
                     <input 
@@ -93,7 +93,7 @@
                         </small>
                     @enderror
                 </div>
-                <!-- Input Pesan -->
+           
                 <div class="form-group" style="margin-top: 15px;">
                     <label for="isi">Pesan <span style="color: #ef4444;">*</span></label>
                     <textarea 
@@ -110,7 +110,7 @@
                     @enderror
                 </div>
 
-                <!-- Kelompok Tombol Aksi menggunakan wrapper .aksi bawaan dari slider.css -->
+          
                 <div class="aksi" style="justify-content: flex-start; margin-top: 25px; gap: 10px; border-top: 1px solid #e2e8f0; padding-top: 20px;">
                     <button type="submit" class="btn btn-add" style="background: #10b981;">
                         <i class="fa-solid fa-floppy-disk"></i> Update
@@ -125,5 +125,5 @@
         </div>
     </div>
 </div>
-
+@include('layouts.footer_table')
 @endsection

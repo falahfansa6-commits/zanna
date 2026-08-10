@@ -12,12 +12,12 @@
     <link rel="stylesheet" href="{{ asset('css/login.css') }}">
 
 <div class="container">
-    <!-- Logo Printex di atas Kotak Login -->
+
     <div class="logo-container">
         <img src="{{ asset('img/printexlogo.png') }}" alt="Printex Logo" class="main-logo">
     </div>
 
-    <!-- Kotak Login Efek Glassmorphism -->
+    
     <div class="login-box">
         <h2>LOGIN ADMIN PRINTEX</h2>
 
@@ -30,12 +30,12 @@
         <form action="{{ url('/login') }}" method="POST">
             @csrf
 
-            <!-- Group Input Username -->
+            
             <div class="input-group">
                 <label for="username">Username</label>
                 <div class="input-wrapper">
                     <span class="input-icon">
-                        <!-- Ikon User (SVG) -->
+                     
                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
                     </span>
                     <input
@@ -50,12 +50,12 @@
                 </div>
             </div>
 
-            <!-- Group Input Password -->
+          
             <div class="input-group">
                 <label for="password">Password</label>
                 <div class="input-wrapper">
                     <span class="input-icon">
-                        <!-- Ikon Gembok (SVG) -->
+                     
                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
                     </span>
                     <input
@@ -66,24 +66,31 @@
                         required
                     >
                     <button type="button" class="toggle-password" onclick="togglePasswordVisibility()">
-                        <!-- Ikon Mata (SVG) -->
+                        
                         <svg id="eye-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
                     </button>
                 </div>
             </div>
 
-            <!-- Tombol Login -->
+          
             <button type="submit" class="btn-login">
                 LOGIN
             </button>
         </form>
 
-        <!-- Menu Tambahan di Bawah -->
-        <div class="login-footer">
-            <a class="footer-link">Lupa Kata Sandi?</a>
-            <p>Butuh Bantuan? <a href="wa.me/+6285136436973" class="footer-link-highlight">Hubungi IT Support</a></p>
-        </div>
-    </div>
+        
+      <div class="login-footer">
+    <a href="#" class="footer-link">Lupa Kata Sandi?</a>
+
+    <p>
+        Butuh Bantuan?
+        <a href="https://wa.me/6285136436973"
+           class="footer-link-highlight"
+           target="_blank">
+            Hubungi IT Support
+        </a>
+    </p>
+</div>
     
     <div class="copyright">
         copyright © PRINTEX IT Solution

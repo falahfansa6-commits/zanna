@@ -107,5 +107,6 @@
         </div>
     </div>
 </div>
+@include('layouts.footer_table')
 
 @endsection

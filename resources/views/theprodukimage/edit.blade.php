@@ -28,12 +28,12 @@
                 </div>
             @endif
 
-            <!-- Form edit gambar -->
+          
             <form action="{{ route('theprodukimage.update', $theprodukimage->id) }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
 
-                <!-- Preview Gambar Saat Ini -->
+                
                 <div class="form-group">
                     <label>Gambar Saat Ini</label>
                     <div class="img-preview-box" style="width: 200px; height: 200px; margin-top: 5px;">
@@ -47,7 +47,7 @@
                     </div>
                 </div>
 
-                <!-- Input File Gambar Baru -->
+              
                 <div class="form-group">
                     <label for="gambar">Pilih Gambar Baru</label>
                     <input 
@@ -63,15 +63,14 @@
                     @enderror
                 </div>
 
-                <!-- Kelompok Tombol Aksi menggunakan wrapper .aksi bawaan CSS -->
-                <!-- Bagian Tombol Aksi / Menggunakan wrapper .aksi bawaan slider.css -->
+              
                 <div class="aksi" style="justify-content: flex-start; margin-top: 25px; gap: 10px; border-top: 1px solid #e2e8f0; padding-top: 20px;">
-                    <!-- Tombol Simpan -->
+                  
                     <button type="submit" class="btn btn-add" style="background-color: #10b981;">
                         <i class="fa-solid fa-floppy-disk"></i> Simpan
                     </button>
 
-                    <!-- Tombol Kembali -->
+                  
                     <a href="{{ route('theprodukimage.index') }}" class="btn btn-edit" style="background-color: #64748b; color: white;">
                         <i class="fa-solid fa-arrow-left"></i> Kembali
                     </a>
@@ -81,6 +80,7 @@
 
         </div>
     </div>
+    @include('layouts.footer_table')
 </div>
 
 @endsection

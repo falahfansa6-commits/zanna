@@ -8,17 +8,17 @@
 <link rel="stylesheet" href="{{ asset('css/slider.css') }}">
 
 <div class="main-wrapper">
-    <!-- Menggunakan batas max-width kecil agar layout form tetap proporsional -->
+    
     <div class="container" style="max-width: 600px;">
         
         <div class="card">
             
-            <!-- Bagian Header Form -->
+         
             <div class="header-section" style="border-bottom: 1px solid #e2e8f0; padding-bottom: 10px;">
                 <h1>Tambah Gambar Our Value</h1>
             </div>
 
-            <!-- Blok Pesan Error Validasi Global -->
+          
             @if($errors->any())
                 <div class="alert-danger">
                     <ul style="margin: 0; padding-left: 20px;">
@@ -29,11 +29,11 @@
                 </div>
             @endif
 
-            <!-- Form tambah gambar -->
+          
             <form action="{{ route('ourvalueimage.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
 
-                <!-- Input Pilih Gambar -->
+              
                 <div class="form-group">
                     <label for="gambar">Pilih Gambar <span style="color: #ef4444;">*</span></label>
                     <input 
@@ -44,7 +44,7 @@
                     <small class="text-muted-row" style="margin-top: 4px; display: block;">Format yang didukung: JPG, JPEG, PNG, atau WEBP. MAX 2MB.</small>
                 </div>
 
-                <!-- Kelompok Tombol Aksi menggunakan wrapper .aksi bawaan CSS -->
+              
                 <div class="aksi" style="justify-content: flex-start; margin-top: 25px; gap: 10px;">
                     <button type="submit" class="btn btn-add" style="background: #10b981;">
                         <i class="fa-solid fa-floppy-disk"></i> Simpan Data
@@ -59,5 +59,5 @@
         </div>
     </div>
 </div>
-
+@include('layouts.footer_table')
 @endsection

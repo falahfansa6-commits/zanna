@@ -20,7 +20,7 @@
     <div class="container">
         <div class="card">
             
-            <!-- Header Section -->
+           
             <div class="header-section">
                 <h1>Data Tentang Kami</h1>
                 <a href="{{ route('tentang.create') }}" class="btn btn-add">
@@ -28,7 +28,7 @@
                 </a>
             </div>
 
-            <!-- Pesan Sukses Alert -->
+            
             @if(session('success'))
                 <div class="alert-success">
                     <i class="fa-solid fa-circle-check"></i> {{ session('success') }}
@@ -114,7 +114,7 @@
                 </table>
             </div>
 
-            <!-- Pagination Section -->
+          
             <div class="pagination-container">
                 <a href="{{ route('admin.about') }}" class="btn btn-back" style="background: #64748b; color: #fff;">
                         <i class="fa-solid fa-arrow-left"></i> Kembali

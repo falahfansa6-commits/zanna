@@ -36,17 +36,17 @@
 </script>
 
 <div class="main-wrapper">
-    <!-- Menggunakan batas max-width kecil agar layout form tetap proporsional -->
+    <!
     <div class="container" style="max-width: 600px;">
         
         <div class="card">
             
-            <!-- Bagian Header Form -->
+          
             <div class="header-section" style="border-bottom: 1px solid #e2e8f0; padding-bottom: 10px;">
                 <h1>Tambah Our Value</h1>
             </div>
 
-            <!-- Blok Pesan Error Validasi Global -->
+          
             @if($errors->any())
                 <div class="alert-danger">
                     <ul style="margin: 0; padding-left: 20px;">
@@ -57,11 +57,9 @@
                 </div>
             @endif
 
-            <!-- Form input data baru -->
             <form action="{{ route('ourvalues.store') }}" method="POST">
                 @csrf
 
-                <!-- Input Judul -->
                 <div class="form-group">
                     <label for="judul">Judul</label>
                     <input 
@@ -73,7 +71,6 @@
                         required>
                 </div>
 
-                <!-- Input Deskripsi -->
                 <div class="form-group">
                     <label for="isi">Deskripsi</label>
                     <textarea id="editor" name="isi">
@@ -81,7 +78,7 @@
     </textarea>
                 </div>
 
-                <!-- Input Urutan -->
+         
                 <div class="form-group">
                     <label for="urutan">Urutan Halaman</label>
                     <input 
@@ -93,7 +90,6 @@
                         required>
                 </div>
 
-                <!-- Pilihan Status -->
                 <div class="form-group">
                     <label for="status">Status</label>
                     <select id="status" name="status" required>
@@ -102,7 +98,7 @@
                     </select>
                 </div>
 
-                <!-- Kelompok Tombol Aksi menggunakan wrapper .aksi bawaan CSS -->
+             
                 <div class="aksi" style="justify-content: flex-start; margin-top: 25px; gap: 10px;">
                     <button type="submit" class="btn btn-add" style="background: #10b981;">
                         <i class="fa-solid fa-floppy-disk"></i> Simpan Data
@@ -117,5 +113,7 @@
         </div>
     </div>
 </div>
+
+@include('layouts.footer_table')
 
 @endsection

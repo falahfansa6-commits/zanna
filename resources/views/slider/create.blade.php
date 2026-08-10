@@ -107,15 +107,14 @@
                         min="1">
                 </div>
 
-                <!-- Bagian Tombol Aksi Bawah -->
-                <!-- Bagian Tombol Aksi / Menggunakan wrapper .aksi bawaan slider.css -->
+               
                 <div class="aksi" style="justify-content: flex-start; margin-top: 25px; gap: 10px; border-top: 1px solid #e2e8f0; padding-top: 20px;">
-                    <!-- Tombol Simpan -->
+                 
                     <button type="submit" class="btn btn-add" style="background-color: #10b981;">
                         <i class="fa-solid fa-floppy-disk"></i> Simpan
                     </button>
 
-                    <!-- Tombol Kembali -->
+                    
                     <a href="{{ route('secound.index') }}" class="btn btn-edit" style="background-color: #64748b; color: white;">
                         <i class="fa-solid fa-arrow-left"></i> Kembali
                     </a>
@@ -125,16 +124,7 @@
         </div>
     </div>
 
-    <footer class="main-footer">
-        <div class="footer-links">
-            <a href="#">Dokumentasi</a>
-            <a href="#">Bantuan</a>
-            <a href="#">Cantast hara</a>
-        </div>
-        <div class="footer-copyright">
-            &copy; 2026 Admin. Intex
-        </div>
-    </footer>
+   @include('layouts.footer_table')
 </div>
 <script>
 document.getElementById('gambar').addEventListener('change', function (e) {

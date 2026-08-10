@@ -170,6 +170,8 @@
     </div>
 </div>
 
+@include('layouts.footer_table')
+
 <!-- Script Counter Karakter Real-time untuk Judul -->
 <script>
     const judul = document.getElementById('judul');

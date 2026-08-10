@@ -11,7 +11,7 @@
     <div class="container">
         <div class="card">
             
-            <!-- Header Section -->
+            
             <div class="header-section">
                 <h1>Edit Product</h1>
                 <a href="{{ route('products.index') }}" class="btn" style="background-color: #64748b; color: white;">
@@ -19,7 +19,7 @@
                 </a>
             </div>
 
-            <!-- Error Notification -->
+          
             @if($errors->any())
                 <div class="alert-success" style="background-color: #fee2e2; color: #991b1b; border: 1px solid #fecaca;">
                     <i class="fa-solid fa-circle-exclamation"></i>
@@ -31,12 +31,12 @@
                 </div>
             @endif
 
-            <!-- Form Edit -->
+           
             <form action="{{ route('products.update', $product->id) }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
 
-                {{-- Judul --}}
+                
                 <div class="mb-3" style="margin-bottom: 20px;">
                     <label for="judul" class="form-label" style="display: block; font-weight: 600; margin-bottom: 8px; color: #1e293b;">
                         Judul
@@ -52,7 +52,7 @@
                     >
                 </div>
 
-                {{-- Isi / Deskripsi --}}
+              
                 <div class="mb-3" style="margin-bottom: 20px;">
                     <label for="isi" class="form-label" style="display: block; font-weight: 600; margin-bottom: 8px; color: #1e293b;">
                         Isi / Deskripsi
@@ -67,7 +67,7 @@
                     >{{ old('isi', $product->isi) }}</textarea>
                 </div>
 
-                {{-- Urutan --}}
+            
                 <div class="mb-3" style="margin-bottom: 20px;">
                     <label for="urutan" class="form-label" style="display: block; font-weight: 600; margin-bottom: 8px; color: #1e293b;">
                         Urutan
@@ -83,7 +83,7 @@
                     >
                 </div>
 
-                {{-- Gambar --}}
+            
                 <div class="mb-3" style="margin-bottom: 20px;">
                     <label for="gambar" class="form-label" style="display: block; font-weight: 600; margin-bottom: 8px; color: #1e293b;">
                         Gambar
@@ -114,14 +114,14 @@
                     </small>
                 </div>
 
-                {{-- Tombol Aksi --}}
+               
                 <div class="aksi" style="display: flex; justify-content: flex-start; margin-top: 25px; gap: 10px; border-top: 1px solid #e2e8f0; padding-top: 20px;">
-                    <!-- Tombol Simpan -->
+                  
                     <button type="submit" class="btn" style="background-color: #10b981; color: white;">
                         <i class="fa-solid fa-floppy-disk"></i> Simpan
                     </button>
 
-                    <!-- Tombol Kembali -->
+                    
                     <a href="{{ route('products.index') }}" class="btn" style="background-color: #64748b; color: white; text-decoration: none;">
                         <i class="fa-solid fa-arrow-left"></i> Kembali
                     </a>
@@ -132,17 +132,7 @@
         </div>
     </div>
 
-    <!-- Footer Konsisten -->
-    <footer class="main-footer">
-        <div class="footer-links">
-            <a href="#">Dokumentasi</a>
-            <a href="#">Bantuan</a>
-            <a href="#">Kontak</a>
-        </div>
-        <div class="footer-copyright">
-            &copy; 2026 Admin. Intex
-        </div>
-    </footer>
+  @include('layouts.footer_table')
 </div>
 
 @endsection

@@ -91,7 +91,7 @@
                         required>
                 </div>
 
-                <!-- Pilihan Status -->
+              
                 <div class="form-group">
                     <label for="status">Status</label>
                     <select id="status" name="status" required>
@@ -100,7 +100,7 @@
                     </select>
                 </div>
 
-                <!-- Kelompok Tombol Aksi menggunakan wrapper .aksi bawaan CSS -->
+               
                 <div class="aksi" style="justify-content: flex-start; margin-top: 25px; gap: 10px;">
                     <button type="submit" class="btn btn-add" style="background: #10b981;">
                         <i class="fa-solid fa-floppy-disk"></i> Update Data
@@ -115,5 +115,7 @@
         </div>
     </div>
 </div>
+
+@include('layouts.footer_table')
 
 @endsection

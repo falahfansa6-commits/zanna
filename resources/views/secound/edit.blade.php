@@ -33,17 +33,17 @@
 });
 </script>
 <div class="main-wrapper">
-    <!-- Menggunakan batas max-width kecil agar layout form tetap proporsional -->
+   
     <div class="container" style="max-width: 600px;">
         
         <div class="card">
             
-            <!-- Bagian Header Form -->
+           
             <div class="header-section" style="border-bottom: 1px solid #e2e8f0; padding-bottom: 10px; margin-bottom: 20px;">
                 <h1>Edit Data Secound</h1>
             </div>
 
-            <!-- Blok Pesan Error Validasi Global -->
+            
             @if ($errors->any())
                 <div class="alert-danger" style="margin-bottom: 20px;">
                     <p style="margin: 0; font-weight: bold;">
@@ -57,12 +57,12 @@
                 </div>
             @endif
 
-            <!-- Form edit data secound -->
+         
             <form action="{{ route('secound.update', $secound->id) }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
 
-                <!-- Input Judul -->
+              
                 <div class="form-group">
                     <label for="judul">Judul <span style="color: #ef4444;">*</span></label>
                     <input 
@@ -80,7 +80,7 @@
                     @enderror
                 </div>
 
-                <!-- Input Deskripsi / Isi -->
+               
                 <div class="form-group" style="margin-top: 15px;">
                     <label for="isi">Deskripsi <span style="color: #ef4444;">*</span></label>
                   <textarea id="editor" name="isi" class="note-editor">
@@ -93,7 +93,7 @@
                     @enderror
                 </div>
 
-                <!-- Preview Gambar Saat Ini / Gambar Baru -->
+             
                 <div class="form-group" style="margin-top: 15px;">
                     <label>Gambar</label>
                     
@@ -109,7 +109,7 @@
                         </div>
                     </div>
 
-                    <!-- Input Ganti Gambar -->
+                 
                     <input 
                         type="file" 
                         id="gambar" 
@@ -128,14 +128,14 @@
                     @enderror
                 </div>
 
-                <!-- Bagian Tombol Aksi / Menggunakan wrapper .aksi bawaan slider.css -->
+               
                 <div class="aksi" style="justify-content: flex-start; margin-top: 25px; gap: 10px; border-top: 1px solid #e2e8f0; padding-top: 20px;">
-                    <!-- Tombol Update -->
+                    
                     <button type="submit" class="btn btn-add" style="background-color: #10b981;">
                         <i class="fa-solid fa-floppy-disk"></i> Update
                     </button>
 
-                    <!-- Tombol Kembali -->
+                   
                     <a href="{{ route('secound.index') }}" class="btn btn-edit" style="background-color: #64748b; color: white;">
                         <i class="fa-solid fa-arrow-left"></i> Kembali
                     </a>
@@ -145,6 +145,7 @@
 
         </div>
     </div>
+    @include('layouts.footer_table')
 </div>
 
 <!-- JavaScript untuk Live Preview Gambar secara Instan sebelum di-upload -->
