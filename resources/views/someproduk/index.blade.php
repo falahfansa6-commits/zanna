@@ -89,4 +89,6 @@
     </table>
 
 </div>
+
+@include('layouts.footer_table')
 @endsection

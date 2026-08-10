@@ -60,7 +60,7 @@
                                 @if($slider->gambar)
                                     <div class="image-wrapper">
                                         <img src="{{ asset('uploads/slider/'.$slider->gambar) }}" alt="{{ $slider->judul }}" class="preview">
-                                        <!-- Quick Edit Button Overlay -->
+                                        
                                         <a href="{{ route('slider.edit',$slider->id) }}" class="quick-edit-overlay">
                                             <i class="fa-solid fa-pen"></i>
                                             <span>Edit</span>
@@ -110,7 +110,7 @@
                 </table>
             </div>
 
-            <!-- Pagination Section -->
+          
             <div class="pagination-container">
                 <a href="{{ route('admin.dashboard') }}" class="btn btn-back" style="background: #64748b; color: #fff;">
                         <i class="fa-solid fa-arrow-left"></i> Kembali
@@ -125,17 +125,7 @@
         </div>
     </div>
 
-    <!-- Page Footer -->
-    <footer class="main-footer">
-    
-        <div class="footer-links">
-            <a href="#">Dokumentasi</a>
-            <a href="#">Bantuan</a>
-            <a href="#">Cantast hara</a>
-        </div>
-        <div class="footer-copyright">
-            &copy; 2026 Admin. Intex
-        </div>
-    </footer>
+
+    @include('layouts.footer_table')
 </div>
 @endsection

@@ -112,16 +112,7 @@
         </div>
     </div>
 
-    <footer class="main-footer">
-        <span class="footer-copyright">
-            &copy; {{ date('Y') }} Admin Dashboard. All rights reserved.
-        </span>
-
-        <div class="footer-links">
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms of Service</a>
-        </div>
-    </footer>
+   @include('layouts.footer_table')
 
 </div>
 

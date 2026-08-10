@@ -50,10 +50,10 @@
                     <tbody>
                         @forelse($secounds as $item)
                         <tr>
-                            <!-- Kolom No -->
+                           
                             <td style="font-weight: 600;">{{ $loop->iteration }}</td>
                             
-                            <!-- Kolom Gambar dengan preview yang rapi -->
+                          
                             <td>
                                 <div style="width: 80px; height: 80px; border-radius: 8px; overflow: hidden; border: 1px solid #e2e8f0; display: flex; align-items: center; justify-content: center; background-color: #f8fafc;">
                                     @if($item->gambar)
@@ -64,25 +64,25 @@
                                 </div>
                             </td>
                             
-                            <!-- Kolom Judul -->
+                     
                             <td style="font-weight: 600; color: #1e293b;">{{ $item->judul }}</td>
                             
-                            <!-- Kolom Deskripsi (dibatasi 100 karakter agar rapi) -->
+                          
                             <td style="color: #64748b;" class="pts-right-description">
                             
                            {!! $item->isi !!}
 
                             </td>
                             
-                            <!-- Kolom Aksi -->
+                       
                             <td>
                                 <div class="aksi" style="display: flex; gap: 8px; justify-content: flex-start;">
-                                    <!-- Tombol Edit -->
+                                  
                                     <a href="{{ route('secound.edit', $item->id) }}" class="btn btn-edit">
                                         <i class="fa-solid fa-pen"></i> Edit
                                     </a>
 
-                                    <!-- Tombol Hapus -->
+                              
                                     <form action="{{ route('secound.destroy', $item->id) }}" method="POST" style="margin: 0; display: inline;">
                                         @csrf
                                         @method('DELETE')
@@ -111,5 +111,7 @@
         </div>
     </div>
 </div>
+
+@include('layouts.footer_table')
 
 @endsection

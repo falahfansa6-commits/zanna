@@ -4,7 +4,7 @@
 
 @section('content')
 
-<!-- Memanggil file CSS dan Icon FontAwesome agar gaya visual seragam -->
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link rel="stylesheet" href="{{ asset('css/slider.css') }}">
 
@@ -13,16 +13,16 @@
         
         <div class="card">
             
-            <!-- Bagian Header Utama -->
+         
             <div class="header-section">
                 <h1>Data Gambar The Produk</h1>
-                <!-- Tombol Tambah Data -->
+             
                 <a href="{{ route('theprodukimage.create') }}" class="btn btn-add">
                     <i class="fa-solid fa-plus"></i> Tambah Gambar
                 </a>
             </div>
 
-            <!-- Notifikasi Sukses Berhasil Simpan/Edit/Hapus -->
+        
             @if(session('success'))
                 <div class="alert-success">
                     <p style="margin: 0; font-weight: bold;">
@@ -31,7 +31,7 @@
                 </div>
             @endif
 
-            <!-- Tabel Data Gambar -->
+        
             <table class="data-table">
                 <thead>
                     <tr>
@@ -45,7 +45,7 @@
                         <tr>
                             <td style="text-align: center; font-weight: 600;">{{ $loop->iteration }}</td>
                             <td>
-                                <!-- Kotak pembungkus preview gambar agar ukurannya seragam dan rapi -->
+                               
                                 <div class="img-preview-box" style="width: 100px; height: 100px; margin: 0;">
                                     @if($item->gambar)
                                         <img src="{{ asset($item->gambar) }}" alt="Gambar Produk">
@@ -57,14 +57,14 @@
                                 </div>
                             </td>
                             <td>
-                                <!-- Wrapper tombol aksi bawaan CSS -->
+                                
                                 <div class="aksi" style="justify-content: center; gap: 8px;">
                                     <!-- Tombol Edit -->
                                     <a href="{{ route('theprodukimage.edit', $item->id) }}" class="btn btn-edit">
                                         <i class="fa-solid fa-pen-to-square"></i> Edit
                                     </a>
 
-                                    <!-- Form Hapus Data -->
+                                
                                     <form action="{{ route('theprodukimage.destroy', $item->id) }}" method="POST" style="display: inline;">
                                         @csrf
                                         @method('DELETE')
@@ -92,5 +92,5 @@
         </div>
     </div>
 </div>
-
+@include('layouts.footer_table')
 @endsection
