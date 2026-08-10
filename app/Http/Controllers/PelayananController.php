@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Service;
 use App\Models\Slider;
 use App\Models\Theproduk;
-use App\Models\Produk1;
+use App\Models\Product;
 use App\Models\Theprodukimage;
 
 class PelayananController extends Controller
@@ -21,7 +21,7 @@ class PelayananController extends Controller
 
         $theproduk = Theproduk::orderBy('urutan', 'asc')->get();
 
-        $produk1 = Produk1::latest()->get();
+       $product = Product::orderBy('urutan', 'asc')->get();
     
         $theprodukimage = Theprodukimage::latest()->first();
 
@@ -29,7 +29,7 @@ class PelayananController extends Controller
             'sliderPelayanan',
             'services',
             'theproduk',
-            'produk1',
+            'product',
             'theprodukimage'
         ));
     }

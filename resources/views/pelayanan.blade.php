@@ -86,7 +86,7 @@
         </div>
     </div> 
 
-    @foreach($produk1 as $item)
+    @foreach($product as $item)
 
 <section id="produk{{ $item->urutan }}" class="item-section">
 

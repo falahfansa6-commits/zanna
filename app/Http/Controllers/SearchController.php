@@ -11,9 +11,7 @@ use App\Models\Service;
 use App\Models\Tentang;
 use App\Models\Location;
 use App\Models\Theproduk;
-use App\Models\Produk1;
-use App\Models\Produk2;
-use App\Models\Produk3;
+use App\Models\Product;
 use App\Models\EmpatKontak;
 use App\Models\Hub_kami;
 
@@ -85,23 +83,9 @@ class SearchController extends Controller
             ],
 
             [
-                'model' => Produk1::class,
+                'model' => Product::class,
                 'route' => route('pelayanan'),
-                'anchor' => 'produk1',
-                'columns' => ['judul','isi'],
-            ],
-
-            [
-                'model' => Produk2::class,
-                'route' => route('pelayanan'),
-                'anchor' => 'produk2',
-                'columns' => ['judul','isi'],
-            ],
-
-            [
-                'model' => Produk3::class,
-                'route' => route('pelayanan'),
-                'anchor' => 'produk3',
+                'anchor' => 'product',
                 'columns' => ['judul','isi'],
             ],
 
