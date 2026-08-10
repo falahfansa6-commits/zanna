@@ -50,7 +50,7 @@
                         <i class="fa-solid fa-floppy-disk"></i> Simpan Data
                     </button>
                     <a href="{{ route('ourvalueimage.index') }}" class="btn btn-edit" style="background: #64748b; color: white;">
-                        <i class="fa-solid fa-arrow-left"></i> Batal
+                        <i class="fa-solid fa-arrow-left"></i> Kembali
                     </a>
                 </div>
 

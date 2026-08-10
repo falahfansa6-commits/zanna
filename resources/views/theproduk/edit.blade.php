@@ -114,12 +114,15 @@
                     @enderror
                 </div>
 
-                <!-- Kelompok Tombol Aksi menggunakan wrapper .aksi bawaan CSS -->
+                <!-- Bagian Tombol Aksi / Menggunakan wrapper .aksi bawaan slider.css -->
                 <div class="aksi" style="justify-content: flex-start; margin-top: 25px; gap: 10px; border-top: 1px solid #e2e8f0; padding-top: 20px;">
-                    <button type="submit" class="btn btn-add" style="background: #10b981;">
-                        <i class="fa-solid fa-floppy-disk"></i> Update
+                    <!-- Tombol Simpan -->
+                    <button type="submit" class="btn btn-add" style="background-color: #10b981;">
+                        <i class="fa-solid fa-floppy-disk"></i> Simpan
                     </button>
-                    <a href="{{ route('theproduk.index') }}" class="btn btn-edit" style="background: #64748b; color: white;">
+
+                    <!-- Tombol Kembali -->
+                    <a href="{{ route('theproduk.index') }}" class="btn btn-edit" style="background-color: #64748b; color: white;">
                         <i class="fa-solid fa-arrow-left"></i> Kembali
                     </a>
                 </div>

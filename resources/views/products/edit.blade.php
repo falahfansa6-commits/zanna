@@ -1,136 +1,148 @@
-@extends('layouts.app')
+@extends('layouts.admin')
+
+@section('title', 'Edit Product')
 
 @section('content')
+<!-- Hubungkan ke FontAwesome & File CSS Utama -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="{{ asset('css/slider.css') }}">
 
-<div class="container">
-<div class="d-flex justify-content-between align-items-center mb-4">
-    <h3>Edit Product</h3>
-
-    <a href="{{ route('products.index') }}" class="btn btn-secondary">
-        Kembali
-    </a>
-</div>
-
-@if($errors->any())
-    <div class="alert alert-danger">
-        <ul class="mb-0">
-            @foreach($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif
-
-<form
-    action="{{ route('products.update', $product->id) }}"
-    method="POST"
-    enctype="multipart/form-data"
->
-
-    @csrf
-    @method('PUT')
-
-    {{-- Judul --}}
-    <div class="mb-3">
-        <label for="judul" class="form-label">
-            Judul
-        </label>
-
-        <input
-            type="text"
-            id="judul"
-            name="judul"
-            class="form-control"
-            value="{{ old('judul', $product->judul) }}"
-            required
-        >
-    </div>
-
-    {{-- Isi --}}
-    <div class="mb-3">
-        <label for="isi" class="form-label">
-            Isi
-        </label>
-
-        <textarea
-            id="isi"
-            name="isi"
-            class="form-control"
-            rows="6"
-            required
-        >{{ old('isi', $product->isi) }}</textarea>
-    </div>
-
-    {{-- Urutan --}}
-    <div class="mb-3">
-        <label for="urutan" class="form-label">
-            Urutan
-        </label>
-
-        <input
-            type="number"
-            id="urutan"
-            name="urutan"
-            class="form-control"
-            value="{{ old('urutan', $product->urutan) }}"
-            required
-        >
-    </div>
-
-    {{-- Gambar --}}
-    <div class="mb-3">
-
-        <label for="gambar" class="form-label">
-            Gambar
-        </label>
-
-        @if($product->gambar)
-
-            <div class="mb-3">
-                <img
-                    src="{{ asset('storage/' . $product->gambar) }}"
-                    width="200"
-                    class="img-thumbnail"
-                    alt="{{ $product->judul }}"
-                >
+<div class="main-wrapper">
+    <div class="container">
+        <div class="card">
+            
+            <!-- Header Section -->
+            <div class="header-section">
+                <h1>Edit Product</h1>
+                <a href="{{ route('products.index') }}" class="btn" style="background-color: #64748b; color: white;">
+                    <i class="fa-solid fa-arrow-left"></i> Kembali
+                </a>
             </div>
 
-        @endif
+            <!-- Error Notification -->
+            @if($errors->any())
+                <div class="alert-success" style="background-color: #fee2e2; color: #991b1b; border: 1px solid #fecaca;">
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    <ul class="mb-0" style="list-style-type: none; padding-left: 0; margin: 0;">
+                        @foreach($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
 
-        <input
-            type="file"
-            id="gambar"
-            name="gambar"
-            class="form-control"
-            accept="image/jpeg,image/png,image/webp"
-        >
+            <!-- Form Edit -->
+            <form action="{{ route('products.update', $product->id) }}" method="POST" enctype="multipart/form-data">
+                @csrf
+                @method('PUT')
 
-        <small class="text-muted">
-            Kosongkan jika tidak ingin mengganti gambar.
-        </small>
+                {{-- Judul --}}
+                <div class="mb-3" style="margin-bottom: 20px;">
+                    <label for="judul" class="form-label" style="display: block; font-weight: 600; margin-bottom: 8px; color: #1e293b;">
+                        Judul
+                    </label>
+                    <input 
+                        type="text" 
+                        id="judul" 
+                        name="judul" 
+                        class="form-control" 
+                        value="{{ old('judul', $product->judul) }}" 
+                        required
+                        style="width: 100%; padding: 10px 14px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 14px;"
+                    >
+                </div>
 
+                {{-- Isi / Deskripsi --}}
+                <div class="mb-3" style="margin-bottom: 20px;">
+                    <label for="isi" class="form-label" style="display: block; font-weight: 600; margin-bottom: 8px; color: #1e293b;">
+                        Isi / Deskripsi
+                    </label>
+                    <textarea 
+                        id="isi" 
+                        name="isi" 
+                        class="form-control" 
+                        rows="6" 
+                        required
+                        style="width: 100%; padding: 10px 14px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 14px;"
+                    >{{ old('isi', $product->isi) }}</textarea>
+                </div>
+
+                {{-- Urutan --}}
+                <div class="mb-3" style="margin-bottom: 20px;">
+                    <label for="urutan" class="form-label" style="display: block; font-weight: 600; margin-bottom: 8px; color: #1e293b;">
+                        Urutan
+                    </label>
+                    <input 
+                        type="number" 
+                        id="urutan" 
+                        name="urutan" 
+                        class="form-control" 
+                        value="{{ old('urutan', $product->urutan) }}" 
+                        required
+                        style="width: 100%; padding: 10px 14px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 14px;"
+                    >
+                </div>
+
+                {{-- Gambar --}}
+                <div class="mb-3" style="margin-bottom: 20px;">
+                    <label for="gambar" class="form-label" style="display: block; font-weight: 600; margin-bottom: 8px; color: #1e293b;">
+                        Gambar
+                    </label>
+
+                    @if($product->gambar)
+                        <div class="mb-3" style="margin-bottom: 12px;">
+                            <img 
+                                src="{{ asset('storage/' . $product->gambar) }}" 
+                                width="150" 
+                                class="img-thumbnail" 
+                                alt="{{ $product->judul }}"
+                                style="border-radius: 6px; border: 1px solid #cbd5e1; padding: 4px;"
+                            >
+                        </div>
+                    @endif
+
+                    <input 
+                        type="file" 
+                        id="gambar" 
+                        name="gambar" 
+                        class="form-control" 
+                        accept="image/jpeg,image/png,image/webp"
+                        style="width: 100%; padding: 8px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 14px; background: #f8fafc;"
+                    >
+                    <small class="text-muted" style="display: block; margin-top: 6px; color: #64748b; font-size: 12px;">
+                        Kosongkan jika tidak ingin mengganti gambar.
+                    </small>
+                </div>
+
+                {{-- Tombol Aksi --}}
+                <div class="aksi" style="display: flex; justify-content: flex-start; margin-top: 25px; gap: 10px; border-top: 1px solid #e2e8f0; padding-top: 20px;">
+                    <!-- Tombol Simpan -->
+                    <button type="submit" class="btn" style="background-color: #10b981; color: white;">
+                        <i class="fa-solid fa-floppy-disk"></i> Simpan
+                    </button>
+
+                    <!-- Tombol Kembali -->
+                    <a href="{{ route('products.index') }}" class="btn" style="background-color: #64748b; color: white; text-decoration: none;">
+                        <i class="fa-solid fa-arrow-left"></i> Kembali
+                    </a>
+                </div>
+
+            </form>
+
+        </div>
     </div>
 
-    {{-- Tombol --}}
-    <div class="mt-4">
-
-        <button
-            type="submit"
-            class="btn btn-primary"
-        >
-            Update Product
-        </button>
-
-        <a
-            href="{{ route('products.index') }}"
-            class="btn btn-secondary"
-        >
-            Batal
-        </a>
-
-    </div>
-
-</form>
+    <!-- Footer Konsisten -->
+    <footer class="main-footer">
+        <div class="footer-links">
+            <a href="#">Dokumentasi</a>
+            <a href="#">Bantuan</a>
+            <a href="#">Kontak</a>
+        </div>
+        <div class="footer-copyright">
+            &copy; 2026 Admin. Intex
+        </div>
+    </footer>
 </div>
 
 @endsection

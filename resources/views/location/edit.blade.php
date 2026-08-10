@@ -101,14 +101,17 @@
                    
 
                 <!-- Bagian Tombol Aksi Bawah -->
-                <div class="btn-group" style="display: flex; justify-content: space-between; gap: 15px; margin-top: 35px; border-top: 1px solid #e2e8f0; padding-top: 20px;">
-                    <a href="{{ route('location.index') }}" class="btn btn-back" style="background: #64748b; color: #fff;">
+                 <!-- Bagian Tombol Aksi / Menggunakan wrapper .aksi bawaan slider.css -->
+                <div class="aksi" style="justify-content: flex-start; margin-top: 25px; gap: 10px; border-top: 1px solid #e2e8f0; padding-top: 20px;">
+                    <!-- Tombol Simpan -->
+                    <button type="submit" class="btn btn-add" style="background-color: #10b981;">
+                        <i class="fa-solid fa-floppy-disk"></i> Simpan
+                    </button>
+
+                    <!-- Tombol Kembali -->
+                    <a href="{{ route('location.index') }}" class="btn btn-edit" style="background-color: #64748b; color: white;">
                         <i class="fa-solid fa-arrow-left"></i> Kembali
                     </a>
-
-                    <button type="submit" class="btn btn-save" style="background: #10b981; color: #fff;">
-                        <i class="fa-solid fa-floppy-disk"></i> Simpan Perubahan
-                    </button>
                 </div>
 
             </form>

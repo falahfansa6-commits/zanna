@@ -17,7 +17,7 @@
 <body>
 
 <div class="main-wrapper">
-    <div class="container" style="max-width: 800px;"> <!-- Membatasi lebar form agar proporsional -->
+    <div class="container" style="max-width: 800px;"> 
         <div class="card">
 
             <div class="header-section" style="margin-bottom: 30px; border-bottom: 1px solid #e2e8f0; padding-bottom: 15px;">
@@ -51,7 +51,6 @@
                         required>
                 </div>
 
-                  <!-- Preview Gambar Saat Ini / Gambar Baru -->
                 <div class="form-group" style="margin-top: 15px;">
                     <label>Gambar</label>
                     
@@ -109,21 +108,23 @@
                 </div>
 
                 <!-- Bagian Tombol Aksi Bawah -->
-                <div class="btn-group" style="display: flex; justify-content: space-between; gap: 15px; margin-top: 35px; border-top: 1px solid #e2e8f0; padding-top: 20px;">
-                    <a href="{{ route('slider.index') }}" class="btn btn-back" style="background: #64748b; color: #fff;">
+                <!-- Bagian Tombol Aksi / Menggunakan wrapper .aksi bawaan slider.css -->
+                <div class="aksi" style="justify-content: flex-start; margin-top: 25px; gap: 10px; border-top: 1px solid #e2e8f0; padding-top: 20px;">
+                    <!-- Tombol Simpan -->
+                    <button type="submit" class="btn btn-add" style="background-color: #10b981;">
+                        <i class="fa-solid fa-floppy-disk"></i> Simpan
+                    </button>
+
+                    <!-- Tombol Kembali -->
+                    <a href="{{ route('secound.index') }}" class="btn btn-edit" style="background-color: #64748b; color: white;">
                         <i class="fa-solid fa-arrow-left"></i> Kembali
                     </a>
-
-                    <button type="submit" class="btn btn-save" style="background: #10b981; color: #fff;">
-                        <i class="fa-solid fa-floppy-disk"></i> Simpan Data
-                    </button>
                 </div>
 
             </form>
         </div>
     </div>
 
-    <!-- Footer Konsisten -->
     <footer class="main-footer">
         <div class="footer-links">
             <a href="#">Dokumentasi</a>
