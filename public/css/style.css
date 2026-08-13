@@ -117,7 +117,6 @@ body {
 .slider-container {
     position: relative;
     width: 100%;
-    margin-top: 80px;
     max-height: 550px;
     overflow: hidden;
     background-color: #111111;
@@ -171,6 +170,7 @@ body {
 
 .prev { left: 20px; }
 .next { right: 20px; }
+
 
 /* TENTANG */
 .container{

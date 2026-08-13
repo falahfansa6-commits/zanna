@@ -32,8 +32,9 @@
             type="button"
             class="prev"
             onclick="prevSlide()"
+            aria-label="Slide sebelumnya"
         >
-            
+            ❮
         </button>
 
 
@@ -67,8 +68,9 @@
             type="button"
             class="next"
             onclick="nextSlide()"
+            aria-label="Slide berikutnya"
         >
-            
+            ❯
         </button>
 
     </section>

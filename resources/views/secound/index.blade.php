@@ -83,13 +83,13 @@
                                     </a>
 
                               
-                                    <form action="{{ route('secound.destroy', $item->id) }}" method="POST" style="margin: 0; display: inline;">
+                                    {{-- <form action="{{ route('secound.destroy', $item->id) }}" method="POST" style="margin: 0; display: inline;">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-delete" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">
                                             <i class="fa-solid fa-trash"></i> Hapus
                                         </button>
-                                    </form>
+                                    </form> --}}
                                 </div>
                             </td>
                         </tr>

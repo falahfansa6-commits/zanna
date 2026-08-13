@@ -21,12 +21,12 @@
         <div class="card">
             
            
-            <div class="header-section">
+            {{-- <div class="header-section">
                 <h1>Data Tentang Kami</h1>
                 <a href="{{ route('tentang.create') }}" class="btn btn-add">
                     <i class="fa-solid fa-plus"></i> Tambah Data
                 </a>
-            </div>
+            </div> --}}
 
             
             @if(session('success'))
@@ -92,13 +92,13 @@
                                         <i class="fa-solid fa-pen"></i> Edit
                                     </a>
 
-                                    <form action="{{ route('tentang.destroy',$item->id) }}" method="POST">
+                                    {{-- <form action="{{ route('tentang.destroy',$item->id) }}" method="POST">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-delete" onclick="return confirm('Yakin hapus data?')">
                                             <i class="fa-solid fa-trash-can"></i> Hapus
                                         </button>
-                                    </form>
+                                    </form> --}}
                                 </div>
                             </td>
                         </tr>
