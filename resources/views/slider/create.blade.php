@@ -115,7 +115,7 @@
                     </button>
 
                     
-                    <a href="{{ route('secound.index') }}" class="btn btn-edit" style="background-color: #64748b; color: white;">
+                    <a href="{{ route('slider.index') }}" class="btn btn-edit" style="background-color: #64748b; color: white;">
                         <i class="fa-solid fa-arrow-left"></i> Kembali
                     </a>
                 </div>

@@ -109,7 +109,7 @@
                 </table>
             </div>
 
-            <!-- Pagination Section (Komponen Statis) -->
+         
             <div class="pagination-container">
                  <a href="{{ route('admin.about') }}" class="btn btn-back" style="background: #64748b; color: #fff;">
                         <i class="fa-solid fa-arrow-left"></i> Kembali

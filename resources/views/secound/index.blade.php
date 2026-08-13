@@ -11,7 +11,7 @@
 <div class="main-wrapper">
     <div class="container">
         
-        <!-- Notifikasi Sukses dengan gaya alert modern -->
+        
         @if(session('success'))
             <div class="alert-success" style="margin-bottom: 20px;">
                 <p style="margin: 0; font-weight: bold;">
@@ -22,17 +22,17 @@
 
         <div class="card">
             
-            <!-- Header Section diselaraskan dengan halaman admin lainnya -->
+          
             <div class="header-section" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; border-bottom: 1px solid #e2e8f0; padding-bottom: 15px; gap: 15px; flex-wrap: wrap;">
                 <div>
                     <h2 style="margin: 0;">Data Secound</h2>
                     <p style="margin: 5px 0 0 0; color: #64748b; font-size: 14px;">Kelola data konten visual, judul, dan deskripsi pendukung.</p>
                 </div>
                 
-                <!-- Tombol Tambah Data -->
+                {{-- <!-- Tombol Tambah Data -->
                 <a href="{{ route('secound.create') }}" class="btn btn-add" style="display: inline-flex; align-items: center; gap: 8px;">
                     <i class="fa-solid fa-plus"></i> Tambah Data
-                </a>
+                </a> --}}
             </div>
 
             <!-- Pembungkus responsif dan tabel admin-table agar layout seragam -->

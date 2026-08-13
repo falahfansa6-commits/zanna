@@ -1,12 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    @extends('layouts.admin')
+@extends('layouts.admin')
 
 @section('title', 'Dashboard')
 
 @section('content')
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -18,15 +17,15 @@
 <body>
 
 <div class="main-wrapper">
-    <div class="container" style="max-w: 800px;"> 
-        <div class="card">
+    <div class="container" style="max-width: 800px;"> 
+        <div class="card" style="border: 0.5px solid #cbd5e1; border-radius: 8px; padding: 20px; background: #fff;">
             
-            <div class="header-section" style="margin-bottom: 30px; border-bottom: 1px solid #e2e8f0; padding-bottom: 15px;">
-                <h1 style="font-size: 24px;"><i class="fa-solid fa-pen-to-square" style="color: #566270; margin-right: 8px;"></i>Edit Slider</h1>
+            <div class="header-section" style="margin-bottom: 20px; border-bottom: 0.5px solid #e2e8f0; padding-bottom: 12px;">
+                <h1 style="font-size: 20px; color: #334155;"><i class="fa-solid fa-pen-to-square" style="color: #566270; margin-right: 8px;"></i>Edit Slider</h1>
             </div>
 
             @if ($errors->any())
-                <div class="alert-danger" style="background:#fef2f2; color:#991b1b; border: 1px solid #fca5a5; padding:14px 18px; border-radius:12px; margin-bottom:20px; font-size: 14px;">
+                <div class="alert-danger" style="background:#fef2f2; color:#991b1b; border: 0.5px solid #fca5a5; padding:12px 16px; border-radius:8px; margin-bottom:20px; font-size: 14px;">
                     <ul style="margin-left: 20px;">
                         @foreach ($errors->all() as $error)
                             <li>{{ $error }}</li>
@@ -35,7 +34,7 @@
                 </div>
             @endif
 
-            <form action="{{ route('slider.update',$slider->id) }}"
+            <form action="{{ route('slider.update', $slider->id) }}"
                   method="POST"
                   enctype="multipart/form-data">
 
@@ -48,7 +47,7 @@
                         type="text"
                         id="judul"
                         name="judul"
-                        value="{{ old('judul',$slider->judul) }}"
+                        value="{{ old('judul', $slider->judul) }}"
                         placeholder="Masukkan judul slider"
                         required>
                 </div>
@@ -57,11 +56,11 @@
                     <label for="posisi">Posisi Tampilan</label>
                     <select id="posisi" name="posisi">
                         <option value="beranda"
-                            {{ old('posisi',$slider->posisi)=='beranda' ? 'selected' : '' }}>
+                            {{ old('posisi', $slider->posisi) == 'beranda' ? 'selected' : '' }}>
                             Beranda
                         </option>
                         <option value="pelayanan"
-                            {{ old('posisi',$slider->posisi)=='pelayanan' ? 'selected' : '' }}>
+                            {{ old('posisi', $slider->posisi) == 'pelayanan' ? 'selected' : '' }}>
                             Pelayanan
                         </option>
                     </select>
@@ -71,11 +70,11 @@
                     <label for="status">Status Publikasi</label>
                     <select id="status" name="status">
                         <option value="1"
-                            {{ old('status',$slider->status)==1 ? 'selected' : '' }}>
+                            {{ old('status', $slider->status) == 1 ? 'selected' : '' }}>
                             Aktif
                         </option>
                         <option value="0"
-                            {{ old('status',$slider->status)==0 ? 'selected' : '' }}>
+                            {{ old('status', $slider->status) == 0 ? 'selected' : '' }}>
                             Tidak Aktif
                         </option>
                     </select>
@@ -88,16 +87,16 @@
                         id="urutan"
                         name="urutan"
                         min="1"
-                        value="{{ old('urutan',$slider->urutan) }}">
+                        value="{{ old('urutan', $slider->urutan) }}">
                 </div>
 
                 <div class="form-group">
                     <label>Gambar Saat Ini</label>
                     <div class="image-preview" style="display: flex; justify-content: flex-start; margin-top: 10px;">
-                        <div class="image-wrapper" style="width: 200px; height: 112px; margin: 0;">
-                            <img src="{{ asset('uploads/slider/'.$slider->gambar) }}"
-                                 alt="Slider"
-                                 class="preview">
+                        <div class="image-wrapper" style="width: 200px; height: 112px; margin: 0; border: 0.5px solid #cbd5e1; border-radius: 6px; overflow: hidden;">
+                            <img src="{{ asset('uploads/slider/' . $slider->gambar) }}"
+                                   alt="Slider"
+                                   class="preview" style="width: 100%; height: 100%; object-fit: cover;">
                         </div>
                     </div>
                 </div>
@@ -110,20 +109,17 @@
                         name="gambar"
                         accept="image/*"
                         style="padding: 8px 12px;">
-                    <small class="text-muted" style="color: #64748b; font-size: 13px; display: block; mt: 6px;">
-                        <i class="fa-solid fa-circle-info"></i>Format yang di dukung jpg,jpeg,png,webp. MAX 2MB.
+                    <small class="text-muted" style="color: #64748b; font-size: 13px; display: block; margin-top: 6px;">
+                        <i class="fa-solid fa-circle-info"></i> Format yang didukung: jpg, jpeg, png, webp. MAX 2MB.
                     </small>
                 </div>
-
              
-                <div class="aksi" style="justify-content: flex-start; margin-top: 25px; gap: 10px; border-top: 1px solid #e2e8f0; padding-top: 20px;">
-                    
-                    <button type="submit" class="btn btn-add" style="background-color: #10b981;">
+                <div class="aksi" style="display: flex; justify-content: flex-start; margin-top: 25px; gap: 10px; border-top: 0.5px solid #e2e8f0; padding-top: 20px;">
+                    <button type="submit" class="btn btn-add" style="background-color: #10b981; border: none; padding: 10px 18px; border-radius: 8px; color: white; cursor: pointer;">
                         <i class="fa-solid fa-floppy-disk"></i> Simpan
                     </button>
 
-                   
-                    <a href="{{ route('slider.index') }}" class="btn btn-edit" style="background-color: #64748b; color: white;">
+                    <a href="{{ route('slider.index') }}" class="btn btn-edit" style="background-color: #64748b; color: white; padding: 10px 18px; border-radius: 8px; text-decoration: none;">
                         <i class="fa-solid fa-arrow-left"></i> Kembali
                     </a>
                 </div>
@@ -132,7 +128,7 @@
         </div>
     </div>
 
-   @include('layouts.footer_table')
+    @include('layouts.footer_table')
 </div>
 
 </body>

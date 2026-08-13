@@ -64,7 +64,7 @@
                                             <i class="fa-solid fa-pen-to-square"></i> Edit
                                         </a>
 
-                                        <form action="{{ route('theprodukimage.destroy', $item->id) }}" method="POST">
+                                        <form action="{{ route('ourvalueimage.destroy', $item->id) }}" method="POST">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-delete" onclick="return confirm('Apakah Anda yakin ingin menghapus gambar ini?')">

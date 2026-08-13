@@ -50,21 +50,23 @@
                                 </div>
                             </td>
                         </tr>
-                        <tr>
-                            <td class="judul-text">Gambar</td>
-                            <td>
-                                <div class="aksi">
-                                    <a href="{{ route('ourvalueimage.index') }}" class="btn btn-edit">
-                                        <i class="fa-solid fa-pen"></i> Detail
-                                    </a>
-                                </div>
-                            </td>
-                        </tr>
+                       
                         <tr>
                             <td class="judul-text">Our Value</td>
                             <td>
                                 <div class="aksi">
                                     <a href="{{ route('ourvalues.index') }}" class="btn btn-edit">
+                                        <i class="fa-solid fa-pen"></i> Detail
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+
+                         <tr>
+                            <td class="judul-text">Gambar</td>
+                            <td>
+                                <div class="aksi">
+                                    <a href="{{ route('ourvalueimage.index') }}" class="btn btn-edit">
                                         <i class="fa-solid fa-pen"></i> Detail
                                     </a>
                                 </div>

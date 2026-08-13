@@ -129,7 +129,7 @@
         <div class="item-frame">
 
             <img class="item-img"
-                 src="{{ asset($item->gambar) }}"
+                 src="{{ asset('storage/' . $item->gambar) }}"
                  alt="{{ $item->judul }}">
 
         </div>

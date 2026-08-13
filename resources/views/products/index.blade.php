@@ -25,17 +25,16 @@
                 </div>
             @endif 
 
-         
-
             <!-- Table Section -->
             <div class="table-responsive">
                 <table class="admin-table">
                     <thead>
                         <tr>
                             <th width="80">No</th>
+                            <th width="100">Gambar</th> <!-- Kolom Baru -->
                             <th>Judul</th>
                             <th>Deskripsi</th>
-                             <th width="90">Urutan</th>
+                            <th width="90">Urutan</th>
                             <th width="220">Aksi</th>
                         </tr>
                     </thead>
@@ -46,6 +45,15 @@
                                 <span class="order-number">{{ $loop->iteration }}</span>
                             </td>
                            
+                            <!-- Tampilan Gambar -->
+                            <td style="text-align: center;">
+                                @if($item->gambar)
+                                    <img src="{{ Storage::url($item->gambar) }}" alt="{{ $item->judul }}" style="width: 50px; height: 50px; object-fit: cover; border-radius: 6px; border: 1px solid #e2e8f0;">
+                                @else
+                                    <span style="display: inline-block; width: 50px; height: 50px; background: #f1f5f9; border-radius: 6px; line-height: 50px; color: #94a3b8; font-size: 12px;">No Image</span>
+                                @endif
+                            </td>
+
                             <td class="judul-text" style="text-align: left; padding-left: 20px; font-weight: 700;">
                                 <i class="fa-solid fa-box" style="color: #94a3b8; margin-right: 8px;"></i>{{ $item->judul }}
                             </td>
@@ -53,7 +61,7 @@
                                 {{ Str::limit(strip_tags($item->isi), 60) }}
                             </td>
 
-                             <td>
+                            <td>
                                 <span class="order-number" style="background: #f1f5f9; padding: 4px 10px; border-radius: 6px;">{{ $item->urutan ?? 1 }}</span>
                             </td>
                             <td>
@@ -74,7 +82,7 @@
                         </tr>
                         @empty
                         <tr>
-                            <td colspan="5" class="empty-data">
+                            <td colspan="6" class="empty-data">
                                 <i class="fa-solid fa-box-open" style="font-size: 32px; color: #cbd5e1; margin-bottom: 10px; display: block;"></i>
                                 Data product belum tersedia.
                             </td>
@@ -86,7 +94,7 @@
 
             <!-- Pagination Section -->
             <div class="pagination-container">
-                 <a href="{{ route('admin.about') }}" class="btn btn-back" style="background: #64748b; color: #fff; text-decoration: none; padding: 6px 14px; border-radius: 6px;">
+                 <a href="{{ route('admin.layanan') }}" class="btn btn-back" style="background: #64748b; color: #fff; text-decoration: none; padding: 6px 14px; border-radius: 6px;">
                         <i class="fa-solid fa-arrow-left"></i> Kembali
                  </a>
                 <div class="pagination-info">Menampilkan {{ $products->count() }} data</div>

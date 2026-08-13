@@ -32,7 +32,7 @@ class TentangController extends Controller
     $request->validate([
         'judul' => 'required',
         'isi' => 'required',
-        'gambar' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048'
+        'gambar' => 'required|image|mimes:jpg,jpeg,png,webp|max:2048'
     ]);
 
     $gambarPath = null;

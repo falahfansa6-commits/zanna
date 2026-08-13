@@ -83,7 +83,7 @@ class LocationController extends Controller
     $location->update([
         'nama_kota' => $request->nama_kota,
         'alamat' => $request->alamat,
-        'ling' => $request->link,
+        'ling' => $request->ling,
     ]);
 
     return redirect()->route('location.index')

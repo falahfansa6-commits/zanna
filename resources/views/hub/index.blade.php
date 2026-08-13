@@ -54,7 +54,7 @@
 
                             <!-- Kolom No WhatsApp -->
                             <td>
-                                <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', $item->no_wa) }}" target="_blank" style="color: #10b981; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
+                                <a href="https://wa.me/+62{{ preg_replace('/[^0-9]/', '', $item->no_wa) }}" target="_blank" style="color: #10b981; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
                                     <i class="fa-brands fa-whatsapp"></i> {{ $item->no_wa }}
                                 </a>
                             </td>
